@@ -1,21 +1,14 @@
 .banner {
+  background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://applebarnorchardandwinery.com/wp-content/uploads/2019/09/Apple-Barn-Orchard.jpg);
   background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-
+  color: $pine;
+  font-weight: 400;
+  line-height: 2em;
+  h1 {
+    font-size: 48px;
+  }
 }
-
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.banner-text {
+  padding: 150px 0px;
+  text-align: center;
 }
