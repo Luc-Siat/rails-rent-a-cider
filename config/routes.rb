@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/create'
   # temp for front reasons
   root to: "pages#home"
   devise_for :users
