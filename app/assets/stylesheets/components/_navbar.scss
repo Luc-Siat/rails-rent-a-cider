@@ -15,8 +15,9 @@
   background: $timber;
   border-radius: 4px;
   height: 55px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
   * {
-    padding: 0 .5em;
+    padding: 0 .6em;
   }
   a {
     text-decoration: none;
@@ -37,6 +38,7 @@
   }
   h3 {
     color: $cafe;
+    font-weight: 600;
     font-size: 1.5em;
     margin: 0;
   }
@@ -47,7 +49,8 @@
   background-color: $ivory;
   height: 30px;
   width: 30px;
-  margin-right: .5em;
+  margin-right: .4em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
 }
 
 .navbar-links {
