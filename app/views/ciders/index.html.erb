@@ -10,22 +10,24 @@
   <div class="row mt-5">
     <div class="col-12 col-sm-6 col-m-4 col-lg-3">
 
-      <div class="card-product m-3 justify-content-evenly">
-        <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg" />
-        <div class="card-product-infos">
-          <div class="card-title">
-            <h2><%= cider.name %></h2>
-            <p>Tested <%= Reservation.where(cider_id === cider).count %> times</p>
-          </div>
-          <div class="card-infos">
-              <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
-            <div class="card-legal-infos d-flex justify-content-between">
-              <p><%= cider.price %></p>
-              <p><%= cider.alcohol_level %>%</p>
+      <% @ciders.each do |cider| %>
+        <div class="card-product m-3 justify-content-evenly">
+          <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg" />
+          <div class="card-product-infos">
+            <div class="card-title">
+              <h2><%= cider.name %></h2>
+              <p>Tested <%= Reservation.where(cider_id === cider).count %> times</p>
+            </div>
+            <div class="card-infos">
+                <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
+              <div class="card-legal-infos d-flex justify-content-between">
+                <p><%= cider.price %></p>
+                <p><%= cider.alcohol_level %>%</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
