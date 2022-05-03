@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'reviews/new'
   get 'reviews/create'
   # temp for front reasons
-  root to: "pages#home"
+  root to: "cider#index"
   devise_for :users
   resources :ciders
   #do
