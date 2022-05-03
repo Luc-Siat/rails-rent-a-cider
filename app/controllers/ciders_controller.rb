@@ -51,6 +51,6 @@ class CidersController < ApplicationController
   end
 
   def cider_params
-    params.require(:cider).permit(:name, :region, :flavor, :alcohol_level, :photo)
+    params.require(:cider).permit(:name, :photo, :region, :flavor, :alcohol_level)
   end
 end
