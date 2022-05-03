@@ -35,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'simple_form', github: 'heartcombo/simple_form'
 
 group :development, :test do
+  gem 'dotenv-rails', groups: [:development, :test]
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
