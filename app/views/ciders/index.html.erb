@@ -1,2 +1,31 @@
-<h1>Ciders#index</h1>
-<p>Find me in app/views/ciders/index.html.erb</p>
+<%= render partial: "layouts/banner" %>
+
+<div class="container mt-5 mb-5">
+
+  <div class="reservation p-2 d-flex mb-3">
+    <input class="form-control" type="text" name="press-field" placeholder="reservation date">
+    <input class="btn" type="submit" name="press" id="press" value="Press!">
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12 col-sm-6 col-m-4 col-lg-3">
+
+      <div class="card-product m-3 justify-content-evenly">
+        <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg" />
+        <div class="card-product-infos">
+          <div class="card-title">
+            <h2><%= cider.name %></h2>
+            <p>Tested <%= Reservation.where(cider_id === cider).count %> times</p>
+          </div>
+          <div class="card-infos">
+              <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
+            <div class="card-legal-infos d-flex justify-content-between">
+              <p><%= cider.price %></p>
+              <p><%= cider.alcohol_level %>%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
