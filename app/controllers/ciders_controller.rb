@@ -9,7 +9,6 @@ class CidersController < ApplicationController
 
   def create
     @cider = Cider.new(cider_params)
-    raise
     if @cider.valid?
       @cider.save
     # no need for app/views/restaurants/create.html.erb
