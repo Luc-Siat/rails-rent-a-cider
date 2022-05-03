@@ -54,6 +54,9 @@
   width: 30px;
   margin-right: .4em;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    &:hover{
+      border: 1px solid rgba(91, 142, 125, 0.3);
+    }
 }
 
 .navbar-links {
