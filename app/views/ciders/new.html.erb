@@ -1,2 +1,11 @@
-<h1>Ciders#new</h1>
-<p>Find me in app/views/ciders/new.html.erb</p>
+<h1>Create A New Cider</h1>
+
+<%= simple_form_for @cider do |f| %>
+  <%= f.input :name %>
+  <%= f.input :region %>
+  <%= f.input :flavor %>
+  <%= f.input :alcohol_level %>
+  <%= f.button :submit %>
+  <%= f.input :photo, as: file %>
+
+<% end %>
