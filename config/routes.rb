@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-
   root to: "ciders#index"
   devise_for :users
   resources :ciders do
     resources :reviews, only: [:create, :new]
+    resources :reservations, only: [:create, :new]
   end
 
   #custom routes
