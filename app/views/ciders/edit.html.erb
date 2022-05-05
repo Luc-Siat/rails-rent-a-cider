@@ -1,12 +1,12 @@
-<h1>Ciders#update</h1>
-<p>Find me in app/views/ciders/update.html.erb</p>
+<h1>Update your Cider</h1>
 
-
-<%= simple_form_for [@cider] do |f| %>
+<div id="form-container">
+<%= simple_form_for @cider do |f| %>
   <%= f.input :name %>
   <%= f.input :region %>
   <%= f.input :flavor %>
   <%= f.input :alcohol_level %>
-  <%= f.submit "UPDATE", class: "btn btn-primary" %>
-
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
 <% end %>
+</div>
