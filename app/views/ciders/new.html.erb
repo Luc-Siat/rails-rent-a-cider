@@ -1,5 +1,5 @@
 <h1>Create A New Cider</h1>
-
+<div id="new-cider-container">
 <%= simple_form_for @cider do |f| %>
   <%= f.input :name %>
   <%= f.input :region %>
@@ -9,3 +9,4 @@
   <%= f.input :photo, as: :file %>
 
 <% end %>
+</div>
