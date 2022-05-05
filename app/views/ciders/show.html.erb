@@ -8,28 +8,28 @@
   </div>
 </div>
 
-<div class="row mt-5">
-  <div class="col-12 col-sm-6 col-m-4 col-lg-3">
-  <%=@cider.name%>
-  </div>
-</div>
-
-<div class="footer">
-      <div class="marques-protegee" dir="ltr">
-        © 2022 Spit Cider
-      </div>
-      <div class="conditions-generales">
-        Condition générales
-      </div>
-      <div class="confidentialite">
-        Confidentialité
-      </div>
-      <div class="infos">
-        Info sur l'Entreprise
-      </div>
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+<div>
+<a href="/ciders/1">
+            <div class="card-product m-3 justify-content-evenly">
+  <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg">
+  <div class="card-product-infos">
+    <div class="card-title">
+    <h2><%= @cider.name %></h2>
+    </div class="card-infos">
+        <p>cider short description</p>
+        <p> <%= @cider.flavor %> flavor</p>
+        <p> <%= @cider.alcohol_level%>%</p>
+    <div class="card-infos">
+      <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
+      <div class="card-legal-infos d-flex justify-content-right">
+        <p></p>
       </div>
     </div>
+  </div>
+</div>
+<div>
+  <p><%= @cider.price %> 13 euros</p>
+  <p></p>
+  <button type="submit" name="add-to-cart" value="13816"
+    class="single_add_to_cart_button button alt">Ajouter au panier</button>
+</div>
