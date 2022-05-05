@@ -7,9 +7,11 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+
     # we need `cider_id` to associate review with corresponding cider
     @cider = Cider.find(params[:cider_id])
     @review.cider_id = @cider.id
+    @review.user_id = current_user.id
     if @review.save
       redirect_to cider_path(@cider)
     else
