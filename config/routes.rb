@@ -3,12 +3,15 @@ Rails.application.routes.draw do
   get 'reviews/create'
 
   root to: "ciders#index"
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
   resources :ciders
 
   #custom routes
-  get 'user/:id', to: 'user#profile', as: :profile
-  get 'user/:id/ciders', to: 'user#ciders', as: :user_ciders
+  get 'profile', to: 'pages#profile', as: :profile
+  get 'profile/ciders', to: 'pages#profile_ciders', as: :profile_ciders
 
   #do
    # resources :reservations, only: [ :new, :create ]
