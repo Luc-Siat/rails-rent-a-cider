@@ -1,5 +1,7 @@
+<%cider = @cider if cider.nil?%>
+
 <div class="card-product m-3 justify-content-evenly">
-  <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg" />
+  <%= cl_image_tag(cider.photo.key)%>
   <div class="card-product-infos">
     <div class="card-title">
       <h2><%= cider.name %></h2>
