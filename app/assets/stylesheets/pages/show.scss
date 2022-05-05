@@ -1,4 +1,22 @@
 .product-page-photo {
-  height: 100vh;
-  width: auto;
+  width: 100%;
+}
+
+.product-page-description {
+  height: 100%;
+
+}
+
+.btn {
+  background-color: $wgreen;
+  color: $pine;
+  &:hover{
+    color: $cultured;
+  }
+}
+
+.edit-pen {
+  position: absolute;
+  top: .5em;
+  right: .5em;
 }

@@ -1,14 +1,32 @@
 
-<div class="container">
-  <%= cl_image_tag(cider.photo.key), class: "product-page-photo"%>
+<div class="container bg-white mt-3">
+  <div class="row position-relative">
+    <div class="col-12 col-lg-6">
+      <%= cl_image_tag(@cider.photo.key, class:"product-page-photo justify-content-center")%>
+    </div>
 
+    <div class="col-12 col-lg-6">
+      <div class="product-page-description p-3">
+        <div class="product-header">
+          <h2><%= @cider.name %></h2>
+          <p>Tested <%= Reservation.where(cider_id: @cider).count %> times</p>
+          <p>flavor: <%= @cider.flavor %></p>
+        </div>
+        <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
+        <div class="product-infos d-inline">
+          <p> <%= @cider.alcohol_level%>%</p>
+          <p><%= @cider.price %>€</p>
+        </div>
+        <div class="product-button align-items-end">
+          <input class="btn w-100" type="submit" name="press" id="press" value="Press!">
+        </div>
+        <% if @cider.user_id === current_user.id%>
+          <%= link_to edit_cider_path(@cider) do %>
+            <i class="fa-solid fa-pen-clip edit-pen"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <p></p>
+    </div>
+  </div>
 </div>
-
-  <h2><%= @cider.name %></h2>
-  <p>flavor: <%= @cider.flavor %></p>
-  <p> <%= @cider.alcohol_level%>%</p>
-  <p><%= @cider.price %>€</p>
-  <p></p>
-  <button type="submit" name="add-to-cart" value="13816"
-  class="single_add_to_cart_button button alt">Ajouter au panier</button>
-  <%= link_to "Edit your cider", edit_cider_path(@cider) %>
