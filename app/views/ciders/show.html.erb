@@ -2,3 +2,36 @@
 <p>Find me in app/views/ciders/show.html.erb</p>
 
 <%= link_to "écrire un commentaire sur le produit", edit_cider_path(@cider) %>
+=======
+<div class="banner">
+  <div class="banner-text">
+    <h1>The perfect Cider at your door step</h1>
+    <p>Why buy new when you can drink <strong>second-hand</strong> cider</p>
+  </div>
+</div>
+
+<div>
+<a href="/ciders/1">
+            <div class="card-product m-3 justify-content-evenly">
+  <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg">
+  <div class="card-product-infos">
+    <div class="card-title">
+    <h2><%= @cider.name %></h2>
+    </div class="card-infos">
+        <p>cider short description</p>
+        <p> <%= @cider.flavor %> flavor</p>
+        <p> <%= @cider.alcohol_level%>%</p>
+    <div class="card-infos">
+      <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
+      <div class="card-legal-infos d-flex justify-content-right">
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <p><%= @cider.price %> 13 euros</p>
+  <p></p>
+  <button type="submit" name="add-to-cart" value="13816"
+    class="single_add_to_cart_button button alt">Ajouter au panier</button>
+</div>
