@@ -33,5 +33,7 @@
   <p><%= @cider.price %> 13 euros</p>
   <p></p>
   <button type="submit" name="add-to-cart" value="13816"
-    class="single_add_to_cart_button button alt">Ajouter au panier</button>
+    class="single_add_to_cart_button button alt">Reserve</button>
+  <%= link_to "Reserve", cider_reservations_path(cider_id: params[:id]), method: :post %>
+
 </div>
