@@ -1,5 +1,5 @@
 
-<div class="container bg-white mt-3">
+<div class="container bg-white mt-3 p-1">
   <div class="row position-relative">
     <div class="col-12 col-lg-6">
       <%= cl_image_tag(@cider.photo.key, class:"product-page-photo justify-content-center")%>
@@ -31,4 +31,16 @@
   <%# <div class="product-reviews">
     <%= @reviews.each do |review|  %>
   </div>
+  <ol class="list-group product-reviews m-3 mt-5">
+    <h3>Your thoughts:</h3>
+    <% @reviews.each do |review| %>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold mb-1"><%= review.title %></div>
+          <%= review.content %>
+        </div>
+        <span><%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class:"rating-seeds")%></span>
+      </li>
+    <% end %>
+  </ol>
 </div>

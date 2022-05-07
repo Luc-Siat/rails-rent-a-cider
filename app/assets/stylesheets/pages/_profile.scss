@@ -2,4 +2,20 @@
   position: absolute;
   top: .5em;
   right: .5em;
+  font-size: .8em;
+  font-weight: 300;
+  i {
+    padding: .3em;
+    color: $wgreen;
+    &:hover {
+      color: $pine;
+    }
+  }
+}
+
+.cider-review {
+  padding-right: 1.2em;
+  width: 100%;
+  text-align: right;
+  display: block;
 }

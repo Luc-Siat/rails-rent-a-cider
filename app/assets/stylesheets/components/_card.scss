@@ -17,7 +17,7 @@
   align-items: center;
   padding: .5em;
   border-radius: 4px;
-  img {
+  a > img {
     height: 100%;
     width: 180px;
     object-fit: contain;
@@ -47,14 +47,20 @@
 }
 
 .card-title {
-  margin-top: 2em;
+  margin-bottom: 3em;
   h2 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 200;
   }
   p {
-    text-align: end;
+    text-align: start;
   }
+}
+
+.rating-seeds {
+  height: 2em;
+  margin: 1.5em;
+  margin-left: 0;
 }
 
 // .card-product .card-product-infos {

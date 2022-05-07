@@ -19,6 +19,7 @@
         <div class="col-12 col-sm-8 col-m-8 col-lg-4">
           <%= link_to cider_path(rented_cider) do  %>
             <%= render "layouts/card", cider: rented_cider %>
+            <%= link_to "Leave a review", new_cider_review_path(rented_cider), class: "link cider-review" %>
           <% end %>
         </div>
       <% end %>

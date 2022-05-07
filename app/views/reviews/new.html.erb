@@ -1,12 +1,11 @@
 <h1>Add A New Review</h1>
 <div id="form-container">
 <%= simple_form_for [ @cider, @review ] do |r| %>
-  <%= r.input :rating %>
+  <%= r.input :title %>
   <%= r.input :content %>
-  <%= r.submit "Submit review", class: "btn btn-primary" %>
+  <%= r.input :rating %>
+  <%= r.submit "Submit review", class: "btn" %>
 <% end %>
 
- <button type="button" class="btn btn-default">
- <%= link_to("Back to Cider List", ciders_path) %>
- </button>
+ <%# <%= link_to "Back to Ciders", ciders_path, class: "btn" %>
  </div>

@@ -17,7 +17,12 @@ p {
 }
 a {
   text-decoration: none;
+  color: $wgreen;
+  &:hover {
+    color: $pine;
+  }
 }
 * {
   color: $pine;
+  font-family: 'Abel', sans-serif;
 }
