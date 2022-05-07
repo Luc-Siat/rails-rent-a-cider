@@ -8,10 +8,17 @@ class ReservationsController < ApplicationController
     @reservation.cider_id = @cider.id
     @reservation.user_id = current_user.id
     @reservation.date = Date.today
+    @reservation.active = true
     if @reservation.save
       redirect_to cider_path(@cider)
     else
       render html: "<script>alert('Already reserved!')</script>".html_safe
     end
+  end
+
+  def edit
+    @reservation = Reservation.find(params[:cider_id])
+    @reservation.active = false
+    redirect_to cider_path
   end
 end

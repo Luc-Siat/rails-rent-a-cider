@@ -1,7 +1,6 @@
-<%cider = @cider if cider.nil?%>
-
-<div class="card-product m-3 justify-content-evenly position-relative">
-  <%= cl_image_tag(cider.photo.key)%>
+<div class="card-product p-3 m-3 justify-content-evenly position-relative">
+  <%cider = @cider if cider.nil?%>
+  <%= cl_image_tag(cider.photo.key, class: "card-product-img")%>
   <div class="card-product-infos">
         <% if cider.user_id === current_user.id %>
     <div class="product-modifier d-inline">
@@ -18,9 +17,9 @@
         <p>Tested <%= Reservation.where(cider_id: cider).count %> times</p>
     </div>
     <div class="card-infos">
-      <%# <%= image_tag("Sunflower_Seed.jpg", class: "rating-seeds")*@review.rating%>
+      <%# <%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class: "rating-seeds")*@review.rating%>
       <div class="card-legal-infos d-flex justify-content-between">
-        <p><%= cider.price %></p>
+        <p><%= cider.price %>€</p>
         <p><%= cider.alcohol_level %>%</p>
       </div>
     </div>

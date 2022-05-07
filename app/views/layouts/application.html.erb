@@ -54,7 +54,3 @@
     <%= render partial: "layouts/footer" %>
   </body>
 </html>
-
-
-@reservation = reservation.where(cider_id: @cider)
-@renter = @reservation.user_id === current_user.id ?  true : false
