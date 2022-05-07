@@ -1,12 +1,13 @@
 <h1>Update your Cider</h1>
-
-<div id="form-container">
-<%= simple_form_for @cider do |f| %>
-  <%= f.input :name %>
-  <%= f.input :region %>
-  <%= f.input :flavor %>
-  <%= f.input :alcohol_level %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div id="form-container">
+  <%= simple_form_for @cider do |f| %>
+    <%= f.input :name %>
+    <%= f.input :region %>
+    <%= f.input :flavor %>
+    <%= f.input :alcohol_level %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+  <% end %>
+  </div>
 </div>
