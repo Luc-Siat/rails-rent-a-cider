@@ -5,7 +5,6 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
     # we need `cider_id` to associate reservation with corresponding cider
     @cider = Cider.find(params[:cider_id])
-    raise
     @reservation.cider_id = @cider.id
     @reservation.user_id = current_user.id
     @reservation.date = Date.today
@@ -18,8 +17,8 @@ class ReservationsController < ApplicationController
   end
 
   def edit
-    @reservation = Reservation.find(params[:cider_id])
-    @reservation.active = false
+    # @reservation = Reservation.find(params[:cider_id])
+    # @reservation.active = false
     redirect_to cider_path
   end
 end

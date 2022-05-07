@@ -11,9 +11,19 @@
   <div class="row mt-5">
     <% @ciders.each do |cider| %>
       <div class="col-12 col-s-12 col-sm-6 col-m-6 col-lg-4">
-        <%= link_to cider_path(cider), class: "" do  %>
+        <%= link_to cider_path(cider) do %>
           <%= render "layouts/card", cider: cider %>
         <% end %>
+        <% if cider.user_id === current_user.id %>
+          <div class="product-modifier d-inline">
+            <%= link_to edit_cider_path(cider) do %>
+              <i class="fa-solid fa-pen-clip"></i>
+            <% end %>
+            <%= link_to cider_path(cider), method: :delete do %>
+              <i class="fa-solid fa-dumpster"></i>
+            <% end %>
+          </div>
+    <% end %>
       </div>
     <% end %>
   </div>
