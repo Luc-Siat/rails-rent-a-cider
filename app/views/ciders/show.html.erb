@@ -1,39 +1,28 @@
-<h1>Ciders#show</h1>
-<p>Find me in app/views/ciders/show.html.erb</p>
 
-<%= link_to "écrire un commentaire sur le produit", edit_cider_path(@cider) %>
-=======
-<div class="banner">
-  <div class="banner-text">
-    <h1>The perfect Cider at your door step</h1>
-    <p>Why buy new when you can drink <strong>second-hand</strong> cider</p>
-  </div>
-</div>
+<div class="container bg-white mt-3">
+  <div class="row position-relative">
+    <div class="col-12 col-lg-6">
+      <%= cl_image_tag(@cider.photo.key, class:"product-page-photo justify-content-center")%>
+    </div>
 
-<div>
-<a href="/ciders/1">
-            <div class="card-product m-3 justify-content-evenly">
-  <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg">
-  <div class="card-product-infos">
-    <div class="card-title">
-    <h2><%= @cider.name %></h2>
-    </div class="card-infos">
-        <p>cider short description</p>
-        <p> <%= @cider.flavor %> flavor</p>
-        <p> <%= @cider.alcohol_level%>%</p>
-    <div class="card-infos">
-      <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
-      <div class="card-legal-infos d-flex justify-content-right">
-        <p></p>
+    <div class="col-12 col-lg-6">
+      <div class="product-page-description p-3">
+        <div class="product-header">
+          <h2><%= @cider.name %></h2>
+          <p>Tested <%= Reservation.where(cider_id: @cider).count %> times</p>
+          <p>flavor: <%= @cider.flavor %></p>
+        </div>
+        <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
+        <div class="product-infos d-inline">
+          <p> <%= @cider.alcohol_level%>%</p>
+          <p><%= @cider.price %>€</p>
+        </div>
+        <div class="product-button align-items-end">
+          <input class="btn w-100" type="submit" name="press" id="press" value="Press!">
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div>
-  <p><%= @cider.price %> 13 euros</p>
-  <p></p>
-  <button type="submit" name="add-to-cart" value="13816"
-    class="single_add_to_cart_button button alt">Reserve</button>
-  <%= link_to "Reserve", cider_reservations_path(cider_id: params[:id]), method: :post %>
+<%= link_to "Reserve", cider_reservations_path(cider_id: params[:id]), method: :post %>
 
-</div>

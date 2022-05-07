@@ -1,0 +1,16 @@
+.product-page-photo {
+  width: 100%;
+}
+
+.product-page-description {
+  height: 100%;
+
+}
+
+.btn {
+  background-color: $wgreen;
+  color: $pine;
+  &:hover{
+    color: $cultured;
+  }
+}
