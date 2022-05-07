@@ -1,6 +1,7 @@
 .btn {
   background-color: $wgreen;
   color: $pine;
+  margin: 0 !important;
   &:hover{
     color: $cultured;
   }

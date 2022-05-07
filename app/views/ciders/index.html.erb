@@ -4,14 +4,14 @@
 
   <div class="reservation p-2 d-flex mb-3">
     <input class="form-control" type="text" name="press-field" placeholder="reservation date" class="fa-regular fa-calendar-days">
-    <input class="btn" type="submit" name="press" id="press" value="Press!">
+    <input class="btn h-100" type="submit" name="press" id="press" value="Press!">
   </div>
 
 
   <div class="row mt-5">
 
       <% @ciders.each do |cider| %>
-        <div class="col-12 col-sm-8 col-m-8 col-lg-4">
+        <div class="col-12 col-s-12 col-sm-6 col-m-6 col-lg-4">
           <%= link_to cider_path(cider) do  %>
             <%= render "layouts/card", cider: cider %>
           <% end %>
