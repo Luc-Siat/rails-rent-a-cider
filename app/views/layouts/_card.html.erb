@@ -38,25 +38,3 @@
   <% end %>
 
 </div>
-
-  <ul class="cards">
-    <li>
-      <a href="" class="card">
-        <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg" class="card__image" alt="" />
-        <div class="card__overlay">
-          <div class="card__header">
-            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-            <div class="card__header-text">
-              <h3 class="card__title"><%= cider.name %></h3>
-              <p>Tested <%= Reservation.where(cider_id: cider).count %> times</p>
-              <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
-            </div>
-          </div>
-          <p class="card__description">
-          <p><%= cider.price %>€</p>
-          <p><%= cider.alcohol_level %>%</p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum illum fugit voluptatum ratione sapiente totam porro, amet dignissimos labore illo laborum minima minus veritatis facilis natus, aperiam ullam atque officiis!</p>
-        </div>
-      </a>
-    </li>
-  </ul>
