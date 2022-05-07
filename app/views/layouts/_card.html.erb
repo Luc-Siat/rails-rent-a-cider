@@ -24,4 +24,16 @@
       </div>
     </div>
   </div>
+
+  <% if cider.user_id === current_user %>
+    <div class="product-modifier d-inline">
+      <%= link_to edit_cider_path(cider) do %>
+        <i class="fa-solid fa-pen-clip"></i>
+      <% end %>
+      <%= link_to cider_path(cider), method: :delete do %>
+        <i class="fa-solid fa-dumpster"></i>
+      <% end %>
+    </div>
+  <% end %>
+
 </div>
