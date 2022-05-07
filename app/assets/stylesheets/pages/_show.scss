@@ -4,10 +4,11 @@
 
 .product-page-description {
   height: 100%;
-
 }
 
 .btn {
+  margin-top: 1em;
+  bottom: 1em;
   background-color: $wgreen;
   color: $pine;
   &:hover{
