@@ -20,13 +20,7 @@
         <div class="product-button align-items-end">
           <input class="btn w-100" type="submit" name="press" id="press" value="Press!">
         </div>
-        <% if @cider.user_id === current_user.id%>
-          <%= link_to edit_cider_path(@cider) do %>
-            <i class="fa-solid fa-pen-clip edit-pen"></i>
-          <% end %>
-        <% end %>
       </div>
-      <p></p>
     </div>
   </div>
 </div>
