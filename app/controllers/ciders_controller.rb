@@ -54,7 +54,6 @@ class CidersController < ApplicationController
 
   def set_rating
     reviews = Review.where(cider_id: @cider)
-    raise
     # @rating =
   end
 
