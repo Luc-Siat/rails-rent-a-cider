@@ -7,6 +7,18 @@ class CidersController < ApplicationController
   end
 
   def show
+    # in a reservation, we have a cider ID and a User ID
+    # if the user id matches the current user and the cider id matches the current cider ID, we can't allow them to reserve it
+    # because it's already reserved
+    #@reservation = Reservation.where(cider_id: @cider)
+    if @reservation = Reservation.find_by_cider_id(@cider)
+      @renter = @reservation.user_id === current_user.id ?  true : false
+      @reserved = false
+    end
+    # Reservation.where(user_id: current_user.id) &&
+    if Reservation.where(cider_id: @cider.id).exists?
+      @reserved = true
+    end
     @reviews = Review.where(cider_id: @cider)
   end
 

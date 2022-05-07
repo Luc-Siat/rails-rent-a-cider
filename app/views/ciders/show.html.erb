@@ -17,10 +17,19 @@
           <p> <%= @cider.alcohol_level%>%</p>
           <p><%= @cider.price %>€</p>
         </div>
-        <div class="product-button align-items-end">
-          <%= link_to "Reserve", cider_reservations_path(cider_id: params[:id]), method: :post, class: "btn w-100" %>        </div>
+        <% if @reserved && @renter %>
+          <p>Already reserved. Would you like to return this cider?</p>
+          <%= link_to "Return", edit_cider_reservation_path(cider_id: params[:id]), class: "btn w-100" %>        </div>
+          <% elsif @reserved %>
+            <p>Reserved by someone else. Sorry!</p>
+          <% else %>
+            <%= link_to "Reserve", cider_reservations_path(cider_id: params[:id]), method: :post, class: "btn w-100" %>        </div>
+        <% end %>
       </div>
     </div>
+  </div>
+  <%# <div class="product-reviews">
+    <%= @reviews.each do |review|  %>
   </div>
   <ol class="list-group product-reviews m-3 mt-5">
     <h3>Your thoughts:</h3>

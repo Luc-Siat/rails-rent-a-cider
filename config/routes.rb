@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :ciders do
     resources :reviews, only: [:create, :new]
-    resources :reservations, only: [:create, :new]
+    resources :reservations, only: [:create, :new, :edit]
   end
 
   #custom routes
