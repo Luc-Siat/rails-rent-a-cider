@@ -1,11 +1,14 @@
 class CidersController < ApplicationController
   before_action :find_cider, only: %i[edit destroy update show]
+  before_action :set_rating, only: %i[index show]
 
   def index
     @ciders = Cider.all
   end
 
-  def show; end
+  def show
+    @reviews = Review.where(cider_id: @cider)
+  end
 
 
   def new
@@ -47,6 +50,12 @@ class CidersController < ApplicationController
 
   def find_cider
     @cider = Cider.find(params[:id])
+  end
+
+  def set_rating
+    reviews = Review.where(cider_id: @cider)
+    raise
+    # @rating =
   end
 
   def cider_params

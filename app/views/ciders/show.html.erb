@@ -23,9 +23,9 @@
     </div>
   </div>
   <div class="product-reviews">
-    <%= @reviews.each do |review|  %>
+    <% @reviews.each do |review|  %>
+      <%= review.content %>
+      <%= image_tag("sunflower_seed.jpg")*(review.rating)%>
+    <% end %>
   </div>
 </div>
-
-
-
