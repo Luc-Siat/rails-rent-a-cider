@@ -34,7 +34,7 @@ class CidersController < ApplicationController
     # method below
 
     # no need for app/views/restaurants/update.html.erb
-    redirect_to ciders_path
+    redirect_to cider_path(@cider)
   end
 
 
