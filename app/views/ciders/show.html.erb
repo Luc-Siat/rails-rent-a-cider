@@ -1,8 +1,3 @@
-<h1>Ciders#show</h1>
-<p>Find me in app/views/ciders/show.html.erb</p>
-
-<%= link_to "écrire un commentaire sur le produit", edit_cider_path(@cider) %>
-=======
 <div class="banner">
   <div class="banner-text">
     <h1>The perfect Cider at your door step</h1>
@@ -24,6 +19,7 @@
     <div class="card-infos">
       <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
       <div class="card-legal-infos d-flex justify-content-right">
+      <%= link_to "update", edit_cider_path(@cider) %>
         <p></p>
       </div>
     </div>
@@ -34,4 +30,6 @@
   <p></p>
   <button type="submit" name="add-to-cart" value="13816"
     class="single_add_to_cart_button button alt">Ajouter au panier</button>
+    <button type="submit" name="add-to-cart" value="13816"
+    class="single_add_to_cart_button button alt">Retour</button>
 </div>
