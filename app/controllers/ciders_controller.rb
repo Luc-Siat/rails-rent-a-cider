@@ -9,6 +9,7 @@ class CidersController < ApplicationController
 
   def create
     @cider = Cider.new(cider_params)
+    @cider.user_id = current_user.id
     if @cider.valid?
       @cider.save
     # no need for app/views/restaurants/create.html.erb
@@ -36,7 +37,7 @@ class CidersController < ApplicationController
     # method below
 
     # no need for app/views/restaurants/update.html.erb
-    redirect_to ciders_path
+    redirect_to cider_path(@cider)
   end
 
   def show
@@ -50,6 +51,6 @@ class CidersController < ApplicationController
   end
 
   def cider_params
-    params.require(:cider).permit(:name, :photo, :region, :flavor, :alcohol_level)
+    params.require(:cider).permit(:name, :photo, :region, :flavor, :alcohol_level, :user)
   end
 end

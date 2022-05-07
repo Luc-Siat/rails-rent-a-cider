@@ -1,0 +1,27 @@
+<div class="banner">
+  <h1 class="banner-text">Hello <%= @user.first_name %>!</h1>
+</div>
+<div class="container mt-5 mb-5">
+  <div class="row mt-5">
+    <h3 class = "text-center">Your ciders</h3>
+      <% @ciders.each do |cider| %>
+        <div class="col-12 col-sm-8 col-m-8 col-lg-4">
+          <%= link_to cider_path(cider) do  %>
+            <%= render "layouts/card", cider: cider %>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+
+    <div class="row mt-5">
+    <h3 class = "text-center">Your rents</h3>
+      <% @rented_ciders.each do |rented_cider| %>
+        <div class="col-12 col-sm-8 col-m-8 col-lg-4">
+          <%= link_to cider_path(rented_cider) do  %>
+            <%= render "layouts/card", cider: rented_cider %>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+
+</div>

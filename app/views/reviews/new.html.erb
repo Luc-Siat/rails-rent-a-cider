@@ -1,2 +1,12 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<h1>Add A New Review</h1>
+<div id="form-container">
+<%= simple_form_for [ @cider, @review ] do |r| %>
+  <%= r.input :rating %>
+  <%= r.input :content %>
+  <%= r.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+
+ <button type="button" class="btn btn-default">
+ <%= link_to("Back to Cider List", ciders_path) %>
+ </button>
+ </div>

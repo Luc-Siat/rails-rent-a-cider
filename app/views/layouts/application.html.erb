@@ -17,28 +17,31 @@
 
     <% if user_signed_in? %>
       <div class="navbar navbar-light w-100 d-flex justify-content-between p-1 align-items-center">
-        <div class="logo d-flex align-items-center">
-          <%= link_to root_path do %>
+         <%= link_to root_path do %>
+          <div class="logo d-flex align-items-center">
             <img src="https://funfamilycrafts.com/wp-content/uploads/2014/05/felt.apple_.worm_.jpg" alt="apple with a worm inside">
             <h3><i class="fa-solid fa-droplet"></i>Spit Cider</h3>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
         <div class="navbar-links d-flex align-items-center">
           <%= link_to "Rent your cider", new_cider_path %>
           <a href="">Your basket</a>
-          <a href="" class="navbar-avatar"></a>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <%= link_to "", profile_path(current_user), class: "navbar-avatar" %>
         </div>
-    <% else %>
       </div>
-            <div class="navbar navbar-light w-100 d-flex justify-content-between p-1 align-items-center">
-        <div class="logo d-flex align-items-center">
-          <img src="https://funfamilycrafts.com/wp-content/uploads/2014/05/felt.apple_.worm_.jpg" alt="apple with a worm inside">
-          <h3><i class="fa-solid fa-droplet"></i>Spit Cider</h3>
-        </div>
+    <% else %>
+      <div class="navbar navbar-light w-100 d-flex justify-content-between p-1 align-items-center">
+        <%= link_to root_path do %>
+          <div class="logo d-flex align-items-center">
+            <img src="https://funfamilycrafts.com/wp-content/uploads/2014/05/felt.apple_.worm_.jpg" alt="apple with a worm inside">
+            <h3><i class="fa-solid fa-droplet"></i>Spit Cider</h3>
+          </div>
+        <% end %>
         <div class="navbar-links d-flex align-items-center">
           <%= link_to "Log in", new_user_session_path %>
           <%= link_to "Sign up", new_user_registration_path %>
-          <a href="" class="navbar-avatar"></a>
+          <%= link_to "", profile_path(current_user), class: "navbar-avatar" %>
         </div>
       </div>
     <% end %>
