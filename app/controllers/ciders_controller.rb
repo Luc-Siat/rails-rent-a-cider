@@ -1,7 +1,12 @@
 class CidersController < ApplicationController
+  before_action :find_cider, only: %i[edit destroy update show]
+
   def index
     @ciders = Cider.all
   end
+
+  def show; end
+
 
   def new
     @cider = Cider.new
@@ -19,18 +24,10 @@ class CidersController < ApplicationController
     end
   end
 
-  def edit
-    find_cider
-  end
 
-  def destroy
-    find_cider
-    @cider.destroy
-    redirect_to ciders_path
-  end
+  def edit; end
 
   def update
-    find_cider
     @cider.update(cider_params)
     # Will raise ActiveModel::ForbiddenAttributesError
     # We need to use Strong Params again to avoid this error, see private
@@ -40,8 +37,10 @@ class CidersController < ApplicationController
     redirect_to cider_path(@cider)
   end
 
-  def show
-    find_cider
+
+  def destroy
+    @cider.destroy
+    redirect_to ciders_path
   end
 
   private
@@ -51,6 +50,6 @@ class CidersController < ApplicationController
   end
 
   def cider_params
-    params.require(:cider).permit(:name, :photo, :region, :flavor, :alcohol_level, :user)
+    params.require(:cider).permit(:name, :photo, :region, :flavor, :price, :alcohol_level, :user)
   end
 end
