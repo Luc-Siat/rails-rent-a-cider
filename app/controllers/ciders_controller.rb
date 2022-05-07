@@ -1,6 +1,6 @@
 class CidersController < ApplicationController
   before_action :find_cider, only: %i[edit destroy update show]
-  before_action :set_rating, only: %i[index show]
+  before_action :set_rating, only: %i[show]
 
   def index
     @ciders = Cider.all
@@ -63,8 +63,12 @@ class CidersController < ApplicationController
   end
 
   def set_rating
-    reviews = Review.where(cider_id: @cider)
-    # @rating =
+    unless Review.where(cider_id: @cider) == []
+      ratings = Review.where(cider_id: @cider).map{ |review| review.rating}
+      @rating = ratings.sum / ratings.count
+    else
+      @rating = 0
+    end
   end
 
   def cider_params

@@ -4,6 +4,9 @@
 
 .product-page-description {
   height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn {
@@ -14,4 +17,11 @@
   &:hover{
     color: $cultured;
   }
+}
+
+.review-banner {
+  background-color: $ivory;
+  padding-bottom: 1em;
+  border-radius: 3px;
+  opacity: 0.8;
 }

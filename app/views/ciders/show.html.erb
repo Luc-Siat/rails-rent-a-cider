@@ -12,7 +12,7 @@
           <p>Tested <%= Reservation.where(cider_id: @cider).count %> times</p>
           <p>flavor: <%= @cider.flavor %></p>
         </div>
-        <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
+        <p><%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class: "rating-seeds-lg")*@rating %></p>
         <div class="product-infos d-inline">
           <p> <%= @cider.alcohol_level%>%</p>
           <p><%= @cider.price %>€</p>
@@ -26,21 +26,25 @@
             <%= link_to "Reserve", cider_reservations_path(cider_id: params[:id]), method: :post, class: "btn w-100" %>        </div>
         <% end %>
       </div>
-          <ol class="list-group product-reviews m-3 mt-5">
-      <h3>Your thoughts:</h3>
+    </div>
+  <%# <div class="product-reviews">
+    <%= @reviews.each do |review|  %>
+  <%# </div> %>
+  </div>
+</div>
+<div class="review-banner">
+  <div class="container">
+    <ol class="list-group product-reviews m-3 mt-5">
+      <h3 class="p-3">Your thoughts:</h3>
       <% @reviews.each do |review| %>
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
             <div class="fw-bold mb-1"><%= review.title %></div>
             <%= review.content %>
           </div>
-          <span><%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class:"rating-seeds")%></span>
+          <span><%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class:"rating-seeds-lg")*review.rating%></span>
         </li>
       <% end %>
     </ol>
-    </div>
-    <%# <div class="product-reviews">
-      <%= @reviews.each do |review|  %>
-    <%# </div> %>
   </div>
 </div>

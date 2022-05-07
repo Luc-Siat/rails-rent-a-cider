@@ -1,5 +1,12 @@
 <div class="card-product p-3 m-3 justify-content-evenly position-relative">
   <%# <%cider = @cider if cider.nil?%>
+  <% unless Review.where(cider_id: cider) == []
+      ratings = Review.where(cider_id: cider).map{ |review| review.rating}
+      @rating = ratings.sum / ratings.count
+    else
+      @rating = 0
+    end
+  %>
   <%= cl_image_tag cider.photo.key, class: "card-product-img"%>
   <div class="card-product-infos">
     <div class="card-title">
@@ -7,7 +14,7 @@
       <p>Tested <%= Reservation.where(cider_id: cider).count %> times</p>
     </div>
     <div class="card-infos">
-      <%= cl_image_tag "Sunflower_Seed_ez1ap1.jpg", class: "rating-seeds" %>
+      <%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class: "rating-seeds")*@rating %>
       <div class="card-legal-infos d-flex justify-content-between">
         <p><%= cider.price %>€</p>
         <p><%= cider.alcohol_level %>%</p>
