@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div>
   <div class="card-product m-3 justify-content-evenly">
     <img src="https://www.calyce-cidre.com/wp-content/uploads/2021/05/Untitled-design-23.jpg" />
@@ -37,4 +38,33 @@
       </a>
     </li>
   </ul>
+=======
+<%cider = @cider if cider.nil?%>
+
+<div class="card-product m-3 justify-content-evenly position-relative">
+  <%= cl_image_tag(cider.photo.key)%>
+  <div class="card-product-infos">
+    <div class="card-title">
+      <h2><%= cider.name %></h2>
+        <p>Tested <%= Reservation.where(cider_id: cider).count %> times</p>
+    </div>
+    <div class="card-infos">
+      <p><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-seedling"></i></p>
+      <div class="card-legal-infos d-flex justify-content-between">
+        <p><%= cider.price %></p>
+        <p><%= cider.alcohol_level %>%</p>
+      </div>
+    </div>
+  </div>
+  <% if cider.user_id === current_user %>
+    <div class="product-modifier d-inline">
+      <%= link_to edit_cider_path(cider) do %>
+        <i class="fa-solid fa-pen-clip"></i>
+      <% end %>
+      <%= link_to cider_path(cider), method: :delete do %>
+        <i class="fa-solid fa-dumpster"></i>
+      <% end %>
+    </div>
+  <% end %>
+>>>>>>> master
 </div>
