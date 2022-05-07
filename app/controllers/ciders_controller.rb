@@ -39,7 +39,6 @@ class CidersController < ApplicationController
     end
   end
 
-
   def edit; end
 
   def update
@@ -51,7 +50,6 @@ class CidersController < ApplicationController
     # no need for app/views/restaurants/update.html.erb
     redirect_to cider_path(@cider)
   end
-
 
   def destroy
     @cider.destroy

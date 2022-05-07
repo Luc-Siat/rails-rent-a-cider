@@ -17,11 +17,6 @@
   align-items: center;
   padding: .5em;
   border-radius: 4px;
-  a > img {
-    height: 100%;
-    width: 180px;
-    object-fit: contain;
-  }
   h2 {
     font-size: 16px;
     font-weight: bold;
@@ -37,6 +32,13 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
   }
 }
+
+.card-product-img  {
+  height: 100%;
+  width: 180px;
+  object-fit: contain;
+}
+
 .card-product-infos {
   justify-content: space-between;
   display: flex;

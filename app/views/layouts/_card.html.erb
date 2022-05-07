@@ -1,7 +1,6 @@
-<%cider = @cider if cider.nil?%>
-
 <div class="card-product p-3 m-3 justify-content-evenly position-relative">
-  <%= cl_image_tag(cider.photo.key)%>
+  <%cider = @cider if cider.nil?%>
+  <%= cl_image_tag(cider.photo.key, class: "card-product-img")%>
   <div class="card-product-infos">
         <% if cider.user_id === current_user.id %>
     <div class="product-modifier d-inline">
