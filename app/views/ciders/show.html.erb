@@ -18,11 +18,12 @@
           <p><%= @cider.price %>€</p>
         </div>
         <div class="product-button align-items-end">
-          <input class="btn w-100" type="submit" name="press" id="press" value="Press!">
-        </div>
+          <%= link_to "Reserve", cider_reservations_path(cider_id: params[:id]), method: :post, class: "btn w-100" %>        </div>
       </div>
     </div>
   </div>
-</div>
-<%= link_to "Reserve", cider_reservations_path(cider_id: params[:id]), method: :post %>
 
+  <div class="product-reviews">
+    <%= @reviews.each do |review|  %>
+  </div>
+</div>
