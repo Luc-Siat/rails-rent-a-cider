@@ -21,7 +21,7 @@
 
   <div class="row mt-5">
     <% @ciders.each do |cider| %>
-      <div class="col-12 col-s-12 col-sm-6 col-m-6 col-lg-4">
+      <div class="col-12 col-s-12 col-sm-6 col-m-6 col-lg-4 position-relative">
         <%= link_to cider_path(cider) do %>
           <%= render "layouts/card", cider: cider %>
         <% end %>

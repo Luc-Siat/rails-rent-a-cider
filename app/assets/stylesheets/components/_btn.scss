@@ -1,8 +1,17 @@
 .btn {
   background-color: $wgreen;
-  color: $pine;
+  color: $ivory;
   margin: 0 !important;
+  z-index: 1;
   &:hover{
     color: $cultured;
+    .btn-border {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0.4em;
+      left: 0.4em;
+      border: 2px solid $wgreen;
+    }
   }
 }

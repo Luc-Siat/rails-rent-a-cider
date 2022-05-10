@@ -1,0 +1,90 @@
+<div class="home-banner ">
+ <div class="container h-100 d-flex flex-column justify-content-around align-items-center">
+   <h1>Typing test gem</h1>
+    <%= link_to ciders_path, class: "w-100 position-relative btn" do%>
+      <h3 class= "btn w-100 fw-lighter fs-4 p-0" >Straight to our ciders!</h3>
+     <div class="btn-border"></div>
+    <% end %>
+ </div>
+</div>
+
+<div class="container pt-5">
+  <h1 class = "p-3 pb-0">Just been posted</h1>
+</div>
+
+  <div class="recent-ciders w-100">
+    <div class="container">
+      <div class="row">
+      <% @recent_ciders.each do |cider| %>
+          <div class="col-12 col-s-12 col-sm-6 col-m-6 col-lg-6 position-relative">
+            <%= link_to cider_path(cider) do %>
+              <%= render "layouts/card", cider: cider %>
+            <% end %>
+            <% if cider.user_id === current_user.id %>
+              <div class="product-modifier d-inline">
+                <%= link_to edit_cider_path(cider) do %>
+                  <i class="fa-solid fa-pen-clip"></i>
+                <% end %>
+                <%= link_to cider_path(cider), method: :delete do %>
+                  <i class="fa-solid fa-dumpster"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+  <div class="selection">
+    <div class="container">
+      <h1 class = "p-3 pb-0 text-center fw-lighter">Our selections</h1>
+    </div>
+    <div class="container d-flex justify-content-between">
+      <%= link_to do %>
+        <div class="card selection-card" id="breton-selection">
+          <h3>The Bretons</h3>
+        </div>
+      <% end %>
+      <%= link_to do %>
+        <div class="card selection-card" id="irish-selection">
+          <h3>The Irish</h3>
+        </div>
+      <% end %>
+      <%= link_to do %>
+        <div class="card selection-card" id="english-selection">
+          <h3>The English</h3>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="top-sellers">
+      <% @top_sellers.each do |seller| %>
+        <div class="seller">
+          <h3><%= seller.first_name %> <%= seller.last_name %></h3>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="last-reviews">
+    <div class="review-banner">
+      <div class="container">
+        <ol class="list-group product-reviews m-3 mt-5">
+          <h3 class="p-3">Your thoughts:</h3>
+          <% @last_reviews.each do |review| %>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold mb-1"><%= review.title %></div>
+                <%= review.content %>
+              </div>
+              <span><%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class:"rating-seeds-lg")*review.rating%></span>
+            </li>
+          <% end %>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
