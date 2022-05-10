@@ -2,9 +2,20 @@
 
 <div class="container mt-5 mb-5">
 
-  <div class="reservation p-2 d-flex mb-3">
+  <%# <div class="reservation p-2 d-flex mb-3">
     <input class="form-control" type="text" name="press-field" placeholder="reservation date" class="fa-regular fa-calendar-days">
     <input class="btn h-100" type="submit" name="press" id="press" value="Press!">
+  </div> %>
+
+  <div class="reservation p-2 mb-3">
+    <%= form_tag ciders_path, class:'d-flex', method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control flex-grow-1 ",
+        placeholder: "Find a cider"
+      %>
+      <%= submit_tag "Press!", class: "btn flex-grow-0" %>
+    <% end %>
   </div>
 
 

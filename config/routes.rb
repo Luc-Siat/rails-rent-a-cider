@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "ciders#index"
+  root to: "pages#home"
   devise_for :users
   resources :ciders do
     resources :reviews, only: [:create, :new]
