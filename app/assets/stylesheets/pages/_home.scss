@@ -1,0 +1,73 @@
+.home-banner {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg);
+  background-size: cover;
+  color: $pine;
+  font-weight: 400;
+  line-height: 2em;
+  h1 {
+    font-size: 4em;
+  }
+}
+
+.selection {
+  background-color: $brown;
+  h1 {
+    color: $ivory;
+  }
+}
+
+.selection-card {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  margin: 1em;
+  height: 16em;
+  width: 16em;
+  background-color: $ivory;
+  background-size: contain;
+  border-radius: 4px;
+  &:hover{
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    opacity: 0.8;
+  }
+}
+
+#breton-selection {
+  background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://fetchthedrinks.com/wp-content/uploads/2019/05/Untitled-1.jpg);
+}
+
+#irish-selection {
+  background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://207cie1h7foyihlmy1ur7qia-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/cider-rapsberry2.jpg);
+
+}
+
+#english-selection {
+  background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://d3r6kbofdnmd8.cloudfront.net/media/catalog/product/cache/image/1536x/a4e40ebdc3e371adff845072e1c73f37/1/0/101703_magners_irish_cider_original.jpg);
+}
+
+.top-sellers {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.seller {
+  background-image: url(https://pelucha.com/wp-content/uploads/sites/2/2017/03/business-portrait-prague-010.jpg);
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 1em;
+  height : 30em;
+  width: 18em;
+  background-color: $wgreen;
+  border-radius: 4px;
+  h3 {
+    color: $cultured;
+  }
+}
