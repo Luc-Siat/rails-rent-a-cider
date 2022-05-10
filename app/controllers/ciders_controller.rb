@@ -3,7 +3,11 @@ class CidersController < ApplicationController
   before_action :set_rating, only: %i[show]
 
   def index
-    @ciders = Cider.all
+    if params[:query].present?
+      @ciders = Cider.global_search(params[:query])
+    else
+      @ciders = Cider.all
+    end
   end
 
   def show
