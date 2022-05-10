@@ -9,6 +9,15 @@ class PagesController < ApplicationController
     @rented_ciders = Cider.where(id: reservations.each { |reservation| reservation })
   end
 
+  def team
+  end
+
+  def careers
+  end
+
+  def cgv
+  end
+
   def set_rating
     unless Review.where(cider_id: @cider) == []
       ratings = Review.where(cider_id: @cider).map{ |review| review.rating}

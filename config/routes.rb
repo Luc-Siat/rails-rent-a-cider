@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   #custom routes
   get 'profile', to: 'pages#profile', as: :profile
-
+  get 'team', to: 'pages#team', as: :team
+  get 'careers', to: 'pages#careers', as: :careers
+  get 'cgv', to: 'pages#cgv', as: :cgv
   #do
    # resources :reservations, only: [ :new, :create ]
    # resources :reviews, only: [ :new, :create ]

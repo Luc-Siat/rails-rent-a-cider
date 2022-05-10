@@ -71,6 +71,74 @@
   padding: .5em;
 }
 
-// .card-product .card-product-infos {
-//   padding: 16px;
-// }
+
+//profile
+
+.card-profile {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-profile img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-profile h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-profile p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-profile .card-profile-infos {
+  padding: 16px;
+}
+
+
+//careers
+
+.card-career {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-career img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-career h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-career p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-career .card-career-infos {
+  padding: 16px;
+}
