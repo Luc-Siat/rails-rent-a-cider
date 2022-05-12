@@ -14,8 +14,8 @@
         </div>
         <p><%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class: "rating-seeds-lg")*@rating %></p>
         <div class="product-infos d-inline">
-          <p> <%= @cider.alcohol_level%>%</p>
-          <p><%= @cider.price %>€</p>
+          <p><span class="emoji"> 🤪 </span><%= @cider.alcohol_level%>%</p>
+          <p><span class="emoji"> 💸  </span><%= @cider.price %>€</p>
         </div>
         <% if @reserved && @renter %>
           <p>Would you like to return this cider?</p>
