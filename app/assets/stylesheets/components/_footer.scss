@@ -91,7 +91,6 @@
 
 .newsletter {
   width: 100%;
-  border-top: 1px solid $wgreen;
   box-shadow: inset 0 5px 0.5px 0.5px rgba(255,255,255,0.4),
 }
 
@@ -108,7 +107,7 @@
  }
 
  .fa-twitter:hover {
-  color: #0C88EF;
+  color: #1DA1F3;
  }
 
  .social {
@@ -121,4 +120,8 @@
 
  .input2 {
   border-radius: 0 25px 25px 0;
+ }
+
+ .footer-title {
+   color: #FAA916;
  }

@@ -65,14 +65,16 @@
 }
 
 .seller {
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  background-blend-mode:darken;
   padding: 1em;
   margin: 1em;
   height : 30em;
-  width: 18em;
+  width: 20em;
   background-color: $wgreen;
   border-radius: 4px;
   h3 {
@@ -83,12 +85,17 @@
 .last-reviews {
   height: 100vh;
   background: $ivory;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid $cultured;
 }
 
 .recent-ciders {
   height: 100vh;
+  display: flex;
 }
 
 .recent-ciders-img {
-
+  margin-top: 1em;
+  height: 80%;
+  border-radius: 4px;
 }
