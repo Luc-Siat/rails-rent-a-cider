@@ -5,10 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-cider = Cider.new(name: "Strongbow", region: "ireland", flavor: "flavor", alcohol_level: "7", price: "4")
-if cider.save
-  puts "saved"
-else
-  puts "nope"
-end
