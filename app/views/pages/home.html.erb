@@ -83,7 +83,7 @@
     </div>
     <div class="top-sellers mt-5">
       <% @top_sellers.each do |seller| %>
-        <div style="background-image: <%= seller.photo.key %>" class="seller" >
+        <div style="background-image: url(<%= cl_image_path seller.photo.key %>)" class="seller" >
           <h3><%= seller.first_name %> <%= seller.last_name %></h3>
         </div>
       <% end %>
