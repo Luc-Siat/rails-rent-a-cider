@@ -13,15 +13,26 @@
       <% end %>
   </div>
 
-    <div class="row mt-5">
-    <h3 class = "text-center">Your rents</h3>
-      <% @rented_ciders.each do |rented_cider| %>
-        <div class="col-12 col-sm-8 col-m-8 col-lg-4">
-          <%= link_to cider_path(rented_cider) do  %>
-            <%= render "layouts/card", cider: rented_cider %>
-            <%= link_to "Leave a review", new_cider_review_path(rented_cider), class: "link cider-review" %>
-          <% end %>
-        </div>
-      <% end %>
-  </div>
+<div class="row mt-5">
+  <h3 class = "text-center">Current Reservations</h3>
+    <% @active_rented_ciders.each do |rented_cider| %>
+      <div class="col-12 col-sm-8 col-m-8 col-lg-4">
+        <%= link_to cider_path(rented_cider) do  %>
+          <%= render "layouts/card", cider: rented_cider %>
+          <%= link_to "Leave a review", new_cider_review_path(rented_cider), class: "link cider-review" %>
+        <% end %>
+      </div>
+    <% end %>
+</div>
+<div class="row mt-5">
+  <h3 class = "text-center">Past Reservations</h3>
+    <% @past_rented_ciders.each do |rented_cider| %>
+      <div class="col-12 col-sm-8 col-m-8 col-lg-4">
+        <%= link_to cider_path(rented_cider) do  %>
+          <%= render "layouts/card", cider: rented_cider %>
+          <%= link_to "Leave a review", new_cider_review_path(rented_cider), class: "link cider-review" %>
+        <% end %>
+      </div>
+    <% end %>
+</div>
 </div>
