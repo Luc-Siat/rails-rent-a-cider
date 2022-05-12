@@ -41,7 +41,7 @@
         <div class="navbar-links d-flex align-items-center">
           <%= link_to "Log in", new_user_session_path %>
           <%= link_to "Sign up", new_user_registration_path %>
-          <%= link_to "", profile_path(current_user), class: "navbar-avatar" %>
+          <%= link_to "", profile_path, class: "navbar-avatar" %>
         </div>
       </div>
     <% end %>

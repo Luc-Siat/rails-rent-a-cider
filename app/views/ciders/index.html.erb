@@ -8,7 +8,7 @@
   </div> %>
 
   <div class="reservation p-2 mb-3">
-    <%= form_tag ciders_path, class:'d-flex', method: :get do %>
+    <%= form_tag ciders_path, class:'d-flex flex-grow-1', method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control flex-grow-1 ",

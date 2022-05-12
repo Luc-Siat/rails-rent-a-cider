@@ -1,6 +1,9 @@
 <div class="home-banner ">
- <div class="container h-100 d-flex flex-column justify-content-around align-items-center">
-   <h1>Typing test gem</h1>
+ <div class="container h-100 d-flex flex-column justify-content-around align-items-center" >
+    <div class="typed-js-container">
+      <span data-controller="typed-js"></span>
+    </div>
+
     <%= link_to ciders_path, class: "w-100 position-relative btn" do%>
       <h3 class= "btn w-100 fw-lighter fs-4 p-0" >Straight to our ciders!</h3>
      <div class="btn-border"></div>
@@ -12,33 +15,35 @@
   <h1 class = "p-3 pb-0">Just been posted</h1>
 </div>
 
-  <div class="recent-ciders w-100">
-    <div class="container">
-      <div class="row">
+  <div class="recent-ciders w-100 container">
+    <img class="recent-ciders-img" src="https://www.calyce-cidre.com/wp-content/uploads/2020/11/Untitled-design.jpg" alt="cider glass">
+    <div class="row">
       <% @recent_ciders.each do |cider| %>
-          <div class="col-12 col-s-12 col-sm-6 col-m-6 col-lg-6 position-relative">
-            <%= link_to cider_path(cider) do %>
-              <%= render "layouts/card", cider: cider %>
-            <% end %>
-            <% if cider.user_id === current_user.id %>
-              <div class="product-modifier d-inline">
-                <%= link_to edit_cider_path(cider) do %>
-                  <i class="fa-solid fa-pen-clip"></i>
-                <% end %>
-                <%= link_to cider_path(cider), method: :delete do %>
-                  <i class="fa-solid fa-dumpster"></i>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+        <div class="col-12 col-s-12 col-sm-6 col-m-6 col-lg-6 position-relative">
+          <%= link_to cider_path(cider) do %>
+            <%= render "layouts/card", cider: cider %>
+          <% end %>
+          <% if cider.user_id === current_user.id %>
+            <div class="product-modifier d-inline">
+              <%= link_to edit_cider_path(cider) do %>
+                <i class="fa-solid fa-pen-clip"></i>
+              <% end %>
+              <%= link_to cider_path(cider), method: :delete do %>
+                <i class="fa-solid fa-dumpster"></i>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-    </div>
     </div>
   </div>
 </div>
   <div class="selection">
     <div class="container">
-      <h1 class = "p-3 pb-0 text-center fw-lighter">Our selections</h1>
+      <div class="element-header">
+        <h1 class = "p-3 pb-0 text-center fw-lighter">Our selections</h1>
+        <h3 class = "undertitles p-3 pb-0 text-center fw-lighter mb-5">Selected by our very passionate team, here are ciders as alive as the people making them</h3>
+      </div>
     </div>
     <div class="container d-flex justify-content-between">
       <%= link_to do %>
@@ -57,12 +62,28 @@
         </div>
       <% end %>
     </div>
+    <div class="container">
+      <h3 class = "undertitles p-3 pb-0 text-center fw-lighter mb-5 ">Make your very own selection</h3>
+        <%= form_tag ciders_path, class:'d-flex flex-grow-1 mb-5', method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control flex-grow-1 input1",
+            placeholder: "Find a cider"
+          %>
+          <%= submit_tag "Press!", class: "btn flex-grow-0 input2 ps-5 pe-5" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="container">
-    <div class="top-sellers">
+    <div class="element-header">
+      <h1 class = "titles p-3 pb-0 text-center fw-lighter">Our best sellers</h1>
+      <h3 class = "undertitles p-3 pb-0 text-center fw-lighter mb-5">the ones hiding behind your best finds</h3>
+    </div>
+    <div class="top-sellers mt-5">
       <% @top_sellers.each do |seller| %>
-        <div class="seller">
+        <div style="background-image: url(<%= cl_image_path seller.photo.key %>)" class="seller" >
           <h3><%= seller.first_name %> <%= seller.last_name %></h3>
         </div>
       <% end %>
@@ -73,7 +94,7 @@
     <div class="review-banner">
       <div class="container">
         <ol class="list-group product-reviews m-3 mt-5">
-          <h3 class="p-3">Your thoughts:</h3>
+          <h3 class="p-3">Your thoughts</h3>
           <% @last_reviews.each do |review| %>
             <li class="list-group-item d-flex justify-content-between align-items-start">
               <div class="ms-2 me-auto">

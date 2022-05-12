@@ -10,8 +10,6 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-
 p {
   margin: 0;
 }
@@ -25,4 +23,13 @@ a {
 * {
   color: $pine;
   font-family: 'Abel', sans-serif;
+}
+
+.undertitles {
+  color: $wgreen
+}
+
+.element-header {
+  margin-bottom: 5em;
+  margin-top: 3em;
 }

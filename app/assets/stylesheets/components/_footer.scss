@@ -88,3 +88,37 @@
   font-size:13px;
   margin-bottom:0;
 }
+
+.newsletter {
+  width: 100%;
+  border-top: 1px solid $wgreen;
+  box-shadow: inset 0 5px 0.5px 0.5px rgba(255,255,255,0.4),
+}
+
+.fa-snapchat:hover {
+  color: #FFFC00;
+ }
+
+ .fa-instagram:hover {
+  color: #974AD3;
+ }
+
+ .fa-facebook-f:hover {
+  color: #0C88EF;
+ }
+
+ .fa-twitter:hover {
+  color: #0C88EF;
+ }
+
+ .social {
+   margin-top: 1em;
+ }
+
+ .input1 {
+  border-radius: 25px 0 0 25px;
+ }
+
+ .input2 {
+  border-radius: 0 25px 25px 0;
+ }

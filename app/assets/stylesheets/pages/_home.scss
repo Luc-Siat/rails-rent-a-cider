@@ -6,13 +6,18 @@
   color: $pine;
   font-weight: 400;
   line-height: 2em;
-  h1 {
+  span {
     font-size: 4em;
+    font-family: 'Permanent Marker', sans-serif;
   }
 }
 
 .selection {
-  background-color: $brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: $pine;
   h1 {
     color: $ivory;
   }
@@ -25,11 +30,14 @@
   justify-content: center;
   padding: 1em;
   margin: 1em;
-  height: 16em;
-  width: 16em;
+  height: 22em;
+  width: 22em;
   background-color: $ivory;
   background-size: contain;
   border-radius: 4px;
+  h3 {
+    font-size: 3em;
+  }
   &:hover{
     box-shadow: 0 10px 30px rgba(0,0,0,.2);
     opacity: 0.8;
@@ -50,13 +58,13 @@
 }
 
 .top-sellers {
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   text-align: center;
 }
 
 .seller {
-  background-image: url(https://pelucha.com/wp-content/uploads/sites/2/2017/03/business-portrait-prague-010.jpg);
   background-size: contain;
   display: flex;
   flex-direction: column;
@@ -70,4 +78,17 @@
   h3 {
     color: $cultured;
   }
+}
+
+.last-reviews {
+  height: 100vh;
+  background: $ivory;
+}
+
+.recent-ciders {
+  height: 100vh;
+}
+
+.recent-ciders-img {
+
 }
