@@ -5,7 +5,17 @@
   <div class="row mt-5">
     <h3 class = "text-center">Your ciders</h3>
       <% @ciders.each do |cider| %>
-        <div class="col-12 col-sm-8 col-m-8 col-lg-4">
+        <div class="col-12 col-sm-8 col-m-8 col-lg-4 position-relative">
+          <% if cider.user_id === current_user.id %>
+              <div class="product-modifier d-inline">
+                <%= link_to edit_cider_path(cider) do %>
+                  <i class="fa-solid fa-pen-clip"></i>
+                <% end %>
+                <%= link_to cider_path(cider), method: :delete do %>
+                  <i class="fa-solid fa-dumpster"></i>
+          <% end %>
+          </div>
+    <% end %>
           <%= link_to cider_path(cider) do  %>
             <%= render "layouts/card", cider: cider %>
           <% end %>
