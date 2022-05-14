@@ -27,7 +27,7 @@
         <div class="navbar-links d-flex align-items-center">
           <%= link_to "Rent your cider", new_cider_path %>
           <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-          <%= link_to profile_path(current_user) do %>
+          <%= link_to profile_path do %>
             <%= cl_image_tag current_user.photo.key, class: "navbar-avatar" %>
           <% end %>
         </div>

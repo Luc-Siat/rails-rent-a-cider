@@ -99,7 +99,7 @@
     </div>
   </div>
 
-  <div class="container vh-100 d-flex flex-column justify-content-around">
+  <div class="container d-flex flex-column justify-content-around">
     <div class="element-header">
       <h1 class = "titles p-3 pb-0 text-center fw-lighter">Our best sellers</h1>
       <h3 class = "undertitles p-3 pb-0 text-center fw-lighter mb-5">the ones hiding behind your best finds</h3>
@@ -110,7 +110,7 @@
           <div style="background-image: linear-gradient(rgba(246, 247, 235, 0.1), rgba(234, 235, 237, 0.1)),url(<%= cl_image_path seller.photo.key %>)" class="seller" ></div>
           <h3><%= seller.first_name %> <%= seller.last_name %></h3>
           <p><%= seller.profile %></p>
-          <p class="undertitles">Rented <%= Reservation.where(user_id: seller).count %> bottles</p>
+          <p class="undertitles">Sold <%= Reservation.where(user_id: seller).count %> bottles</p>
         </div>
       <% end %>
     </div>
