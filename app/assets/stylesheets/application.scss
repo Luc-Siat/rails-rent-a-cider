@@ -37,3 +37,21 @@ a {
 .brand-name {
   font-family: 'Permanent Marker', sans-serif;
 }
+
+.form-header {
+  text-align: center;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-content {
+  align-items: center;
+  background-color: $cultured;
+  border-radius: 4px;
+  padding: 4em;
+  line-height: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}

@@ -1,13 +1,11 @@
-<div class="container">
+<div class="container form-header">
   <h1>Add A New Review</h1>
-  <div id="form-container">
-  <%= simple_form_for ([ @cider, @review ], remote: true) do |r| %>
-    <%= r.input :title %>
-    <%= r.input :content %>
-    <%= r.input :rating %>
-    <%= r.submit "Submit review", class: "btn" %>
-  <% end %>
-
-  <%# <%= link_to "Back to Ciders", ciders_path, class: "btn" %>
+  <div id="form-container" class="form-content">
+    <%= simple_form_for([ @cider, @review ], remote: true) do |r| %>
+      <%= r.input :title %>
+      <%= r.input :content %>
+      <%= r.input :rating %>
+      <%= r.submit "Submit review", class: "btn" %>
+    <% end %>
   </div>
 </div>

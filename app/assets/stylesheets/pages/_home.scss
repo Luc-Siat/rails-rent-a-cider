@@ -129,6 +129,7 @@
 }
 
 .seller-card {
+  width: 20em;
 }
 .seller {
   background-size: cover;
@@ -136,9 +137,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width:100%;
-  height: 25em;
-  margin-bottom: 1em;
+  padding: 1em;
+  margin: 1em;
+  height : 30em;
+  width: 20em;
   background-color: $wgreen;
   border-radius: 4px;
   h3 {

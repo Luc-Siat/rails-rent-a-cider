@@ -20,7 +20,7 @@
 
   <div class="container d-flex mb-5">
     <div class="posted w-50 d-flex m-3 ms-0">
-      <img class="recent-ciders-img h-100" src="https://www.calyce-cidre.com/wp-content/uploads/2020/11/Untitled-design.jpg" alt="cider glass">
+      <img class="recent-ciders-img h-100" src="https://www.calyce-cidre.com/wp-content/uploads/2022/04/Menu-Avril-scaled.jpg" alt="cider picnic">
     </div>
     <div class="recent-ciders w-50 d-flex">
       <div class="row ms-1 w-100 h-100 ">
@@ -125,7 +125,7 @@
           <% @last_reviews.each do |review| %>
             <li class="list-group-item d-flex justify-content-between align-items-start">
               <div class="ms-2 me-auto">
-                <div class="fw-bold mb-1"><%= review.title %></div>
+                <div class="fw-bold mb-1"><%= Cider.where(id: review.cider_id).name %><%= review.title %></div>
                 <%= review.content %>
               </div>
               <span><%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class:"rating-seeds-lg")*review.rating%></span>

@@ -15,7 +15,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  padding: .5em;
   border-radius: 4px;
   h2 {
     font-size: 16px;
@@ -61,7 +60,7 @@
 }
 
 .rating-seeds {
-  height: 1em;
+  height: .9em;
   margin-left: 0;
 }
 
@@ -72,7 +71,7 @@
 }
 
 .emoji {
-  font-size: 20px;
+  font-size: 1.5em;
 }
 
 // .card-product .card-product-infos {
