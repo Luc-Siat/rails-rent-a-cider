@@ -24,6 +24,8 @@
     color: $wgreen;
     &:hover {
       color: $pine;
+      // font-size: 1.1em;
+      // letter-spacing: 1px;
     }
   }
 }
@@ -43,7 +45,6 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 2px solid $ivory;
     padding: 0;
   }
   h3 {
@@ -63,14 +64,19 @@
   background-color: $ivory;
   height: 30px;
   width: 30px;
+  padding: 0;
   margin-right: .4em;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
     &:hover{
-      border: 1px solid rgba(91, 142, 125, 0.3);
+      height: 32px;
+      width:32px;
     }
 }
 
 .navbar-links {
+  a:hover {
+    font-size: 1.1em;
+  }
   :first-child {
     border-right: 1px solid $wgreen;
   }

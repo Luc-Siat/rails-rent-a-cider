@@ -1,7 +1,7 @@
 .home-banner {
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg);
+  // background-image: linear-gradient(rgba(246, 247, 235, 0.1), rgba(234, 235, 237, 0.1)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg);
   background-size: cover;
   color: $pine;
   font-weight: 400;
@@ -10,6 +10,54 @@
     font-size: 4em;
     font-family: 'Permanent Marker', sans-serif;
   }
+  // &:hover {
+  //   background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.1)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg);
+
+  // }
+}
+
+.btn-wrapper::after{
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: linear-gradient(rgba(246, 247, 235, 0.5), rgba(234, 235, 237, 0.5)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg);
+  animation-name: fog-back;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  transition: all 300ms ease;
+}
+
+
+
+.btn-wrapper:hover::after {
+  animation-name: clear-up;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clear-up{
+  0%   {background-image: linear-gradient(rgba(246, 247, 235, 0.4), rgba(234, 235, 237, 0.4)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  25%   {background-image: linear-gradient(rgba(246, 247, 235, 0.35), rgba(234, 235, 237, 0.35)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  37%   {background-image: linear-gradient(rgba(246, 247, 235, 0.3), rgba(234, 235, 237, 0.3)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  50%   {background-image: linear-gradient(rgba(246, 247, 235, 0.25), rgba(234, 235, 237, 0.25)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  75%   {background-image: linear-gradient(rgba(246, 247, 235, 0.2), rgba(234, 235, 237, 0.2)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  87%  {background-image: linear-gradient(rgba(246, 247, 235, 0.15), rgba(234, 235, 237, 0.15)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  100%  {background-image: linear-gradient(rgba(246, 247, 235, 0.1), rgba(234, 235, 237, 0.1)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+}
+
+@keyframes fog-back{
+  0%  {background-image: linear-gradient(rgba(246, 247, 235, 0.1), rgba(234, 235, 237, 0.1)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  25%  {background-image: linear-gradient(rgba(246, 247, 235, 0.15), rgba(234, 235, 237, 0.1)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  37%   {background-image: linear-gradient(rgba(246, 247, 235, 0.25), rgba(234, 235, 237, 0.25)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  50%   {background-image: linear-gradient(rgba(246, 247, 235, 0.2), rgba(234, 235, 237, 0.2)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  75%   {background-image: linear-gradient(rgba(246, 247, 235, 0.3), rgba(234, 235, 237, 0.3)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  87%  {background-image: linear-gradient(rgba(246, 247, 235, 0.35), rgba(234, 235, 237, 0.35)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
+  100%   {background-image: linear-gradient(rgba(246, 247, 235, 0.4), rgba(234, 235, 237, 0.4)), url(https://www.lemarchedeleopold.com/wp-content/uploads/2020/10/pomme-juliet.jpeg)}
 }
 
 .selection {
@@ -30,47 +78,65 @@
   justify-content: center;
   padding: 1em;
   margin: 1em;
-  height: 22em;
-  width: 22em;
+  width: 100%;
+  height: 20em;
   background-color: $ivory;
-  background-size: contain;
+  background-size: cover;
   border-radius: 4px;
   h3 {
     font-size: 3em;
   }
   &:hover{
     box-shadow: 0 10px 30px rgba(0,0,0,.2);
-    opacity: 0.8;
+    h3 {
+      opacity: 0;
+    }
   }
 }
 
 #breton-selection {
   background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://fetchthedrinks.com/wp-content/uploads/2019/05/Untitled-1.jpg);
+  &:hover {
+    background-image: linear-gradient(rgba(246, 247, 235, 0.3), rgba(234, 235, 237, 0.3)), url(https://fetchthedrinks.com/wp-content/uploads/2019/05/Untitled-1.jpg);
+  }
 }
 
 #irish-selection {
   background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://207cie1h7foyihlmy1ur7qia-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/cider-rapsberry2.jpg);
-
+  &:hover {
+    background-image: linear-gradient(rgba(246, 247, 235, 0.3), rgba(234, 235, 237, 0.3)), url(https://207cie1h7foyihlmy1ur7qia-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/cider-rapsberry2.jpg);
+  }
 }
 
 #english-selection {
   background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://d3r6kbofdnmd8.cloudfront.net/media/catalog/product/cache/image/1536x/a4e40ebdc3e371adff845072e1c73f37/1/0/101703_magners_irish_cider_original.jpg);
+  &:hover {
+    background-image: linear-gradient(rgba(246, 247, 235, 0.3), rgba(234, 235, 237, 0.3)), url(https://d3r6kbofdnmd8.cloudfront.net/media/catalog/product/cache/image/1536x/a4e40ebdc3e371adff845072e1c73f37/1/0/101703_magners_irish_cider_original.jpg);
+  }
+}
+
+#normand-selection {
+  background-image: linear-gradient(rgba(246, 247, 235, 0.6), rgba(234, 235, 237, 0.6)), url(https://madeincalvados.com/1764-thickbox_default/cidre-fermier.jpg);
+  &:hover {
+    background-image: linear-gradient(rgba(246, 247, 235, 0.3), rgba(234, 235, 237, 0.3)), url(https://madeincalvados.com/1764-thickbox_default/cidre-fermier.jpg);
+  }
 }
 
 .top-sellers {
-  height: 100vh;
   display: flex;
   justify-content: space-between;
   text-align: center;
 }
 
+.seller-card {
+  width: 20em;
+}
 .seller {
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-blend-mode:darken;
   padding: 1em;
   margin: 1em;
   height : 30em;
@@ -83,19 +149,19 @@
 }
 
 .last-reviews {
-  height: 100vh;
+  height: 50vh;
   background: $ivory;
   border-radius: 10px 10px 0 0;
   border: 1px solid $cultured;
 }
 
 .recent-ciders {
-  height: 100vh;
   display: flex;
+
 }
 
 .recent-ciders-img {
-  margin-top: 1em;
-  height: 80%;
+  height: 100%;
+  width: 100%;
   border-radius: 4px;
 }

@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :ciders, dependent: :destroy
   validates_inclusion_of :age, in: 18..200
+  validates :photo, presence: true
 end
