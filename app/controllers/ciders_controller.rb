@@ -1,6 +1,7 @@
 class CidersController < ApplicationController
   before_action :find_cider, only: %i[edit destroy update show]
   before_action :set_rating, only: %i[show]
+  skip_before_action :authenticate_user!, only: %i[index]
 
   def index
     if params[:query].present?

@@ -7,8 +7,7 @@
       <% @ciders.each do |cider| %>
         <div class="col-12 col-sm-8 col-m-8 col-lg-4 position-relative">
           <% if current_user.nil? %>
-
-          <%= else %>
+          <% else %>
             <% if cider.user_id === current_user.id %>
               <div class="product-modifier d-inline">
                 <%= link_to edit_cider_path(cider) do %>
