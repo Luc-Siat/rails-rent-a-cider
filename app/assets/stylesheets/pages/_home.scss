@@ -64,7 +64,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
   background-color: $pine;
   h1 {
     color: $ivory;
@@ -148,7 +147,6 @@
 }
 
 .last-reviews {
-  height: 50vh;
   background: $ivory;
   border-radius: 10px 10px 0 0;
   border: 1px solid $cultured;
