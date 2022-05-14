@@ -30,8 +30,8 @@
 
         </div>
         <div class="product-infos pt-5 mt-5 mb-0 d-inline d-flex">
-          <p style="padding-right: 36px;"><span class="emoji"> 🤪 </span><%= @cider.alcohol_level%>%</p>
-          <p><span class="emoji"> 💸  </span><%= @cider.price %>€</p>
+          <p><%= @cider.alcohol_level%>%</p>
+          <p></span><%= @cider.price %>€</p>
         </div>
           <% if @rating != 0 %>
             <p class="d-inline mt-0 fs-3"><%= cl_image_tag("Sunflower_Seed_ez1ap1.jpg", class: "rating-seeds-lg")*@rating %></p>
