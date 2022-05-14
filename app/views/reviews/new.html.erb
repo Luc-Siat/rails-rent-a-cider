@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Add A New Review</h1>
   <div id="form-container">
-  <%= simple_form_for [ @cider, @review ] do |r| %>
+  <%= simple_form_for ([ @cider, @review ], remote: true) do |r| %>
     <%= r.input :title %>
     <%= r.input :content %>
     <%= r.input :rating %>
