@@ -5,7 +5,14 @@
 # image1 = Cloudinary::Uploader.upload("cidre1.jpg")
 # cider1 = Cider.create(user: user, name: "Opalyne", region: "Brittany",
 # flavor: "Bittersweet, sour & fruity", price: 4 , alcohol_level: 5 , photo: image1)
+
+Reservation.destroy_all
+Review.destroy_all
+Cider.destroy_all
+
 user = User.first.id
+user2 = User.last.id
+
 
 file = URI.open('https://www.calyce-cidre.com/wp-content/uploads/2020/10/Bordelet-500x500.jpg')
 cider1 = Cider.create(user_id: user, name: "Opalyne", region: "Brittany", flavor: "Bittersweet, sour & fruity", price: 4,
@@ -31,3 +38,13 @@ file = URI.open('https://www.calyce-cidre.com/wp-content/uploads/2021/06/Boire-d
 cider5 = Cider.create(user_id: user, name: "This Sider Up", region: "Normandy", flavor: "Mineral, fruity", price: 16,
   alcohol_level: 5)
 cider5.photo.attach(io: file, filename: 'cider5', content_type: 'image/png')
+
+reservation1 = Reservation.create(cider_id: cider1.id, user_id: user, date: Date.today, active: false)
+
+review1 = Review.create(content: "what an amazing cider, I definitely recommend that you try it",
+  cider_id: cider1.id, user_id: user, rating: 5 )
+
+reservation2 = Reservation.create(cider_id: cider3.id, user_id: user2, date: Date.today, active: false)
+
+review2 = Review.create(content: "it was a bit dry, but still a good cider",
+  cider_id: cider3.id, user_id: user2, rating: 4)
