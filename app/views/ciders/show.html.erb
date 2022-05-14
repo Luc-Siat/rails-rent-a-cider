@@ -43,6 +43,7 @@
           <p>Would you like to return this cider?</p>
           <%= link_to "Return", edit_cider_reservation_path(cider_id: params[:id]), class: "btn w-100" %>        </div>
         <% elsif @renter %>
+
         <% elsif @reserved %>
           <p>Reserved by someone else. Sorry!</p>
         <% else %>
