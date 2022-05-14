@@ -29,6 +29,8 @@
             <%= link_to cider_path(cider) do %>
               <%= render "layouts/card", cider: cider %>
             <% end %>
+          <% if current_user.nil? %>
+          <%else %>
             <% if cider.user_id === current_user.id %>
               <div class="product-modifier d-inline">
                 <%= link_to edit_cider_path(cider) do %>
@@ -39,6 +41,7 @@
                 <% end %>
               </div>
             <% end %>
+          <% end %>
           </div>
         <% end %>
       </div>
