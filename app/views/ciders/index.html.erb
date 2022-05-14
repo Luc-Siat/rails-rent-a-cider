@@ -6,17 +6,15 @@
     <input class="form-control" type="text" name="press-field" placeholder="reservation date" class="fa-regular fa-calendar-days">
     <input class="btn h-100" type="submit" name="press" id="press" value="Press!">
   </div> %>
-
-  <div class="reservation p-2 mb-3">
-    <%= form_tag ciders_path, class:'d-flex flex-grow-1', method: :get do %>
+    <%= form_tag ciders_path, class:' d-flex flex-grow-1 mb-5', method: :get do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control flex-grow-1 ",
-        placeholder: "Find a cider"
+        class: "form-control flex-grow-1 input1 p-2 bg-light",
+        placeholder: "   Find a cider"
       %>
-      <%= submit_tag "Press!", class: "btn flex-grow-0" %>
+      <%= submit_tag "Press!", class: "btn flex-grow-0 input2 ps-5 pe-5" %>
     <% end %>
-  </div>
+
 
 
   <div class="row mt-5">

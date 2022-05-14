@@ -19,13 +19,13 @@
   </div>
 
   <div class="container d-flex mb-5">
-    <div class="posted w-50 d-flex me-1">
+    <div class="posted w-50 d-flex m-3 ms-0">
       <img class="recent-ciders-img h-100" src="https://www.calyce-cidre.com/wp-content/uploads/2020/11/Untitled-design.jpg" alt="cider glass">
     </div>
     <div class="recent-ciders w-50 d-flex">
-      <div class="row ms-1 w-100 h-100">
+      <div class="row ms-1 w-100 h-100 ">
         <% @recent_ciders.each do |cider| %>
-          <div class="col-6 position-relative w-50 align-items-center p-0">
+          <div class="col-6 position-relative w-50 p-0">
             <%= link_to cider_path(cider) do %>
               <%= render "layouts/card", cider: cider %>
             <% end %>
@@ -87,11 +87,11 @@
       </div>
     </div>
     <div class="container">
-      <h3 class = "undertitles p-3 pb-0 text-center fw-lighter mb-5 ">Make your very own selection</h3>
+      <h3 class = "undertitles p-2 pb-0 text-center fw-lighter mb-5 ">Make your very own selection</h3>
       <%= form_tag ciders_path, class:'d-flex flex-grow-1 mb-5', method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control flex-grow-1 input1 p-3",
+          class: "form-control flex-grow-1 input1 p-2",
           placeholder: "   Find a cider"
         %>
         <%= submit_tag "Press!", class: "btn flex-grow-0 input2 ps-5 pe-5" %>
@@ -104,12 +104,13 @@
       <h1 class = "titles p-3 pb-0 text-center fw-lighter">Our best sellers</h1>
       <h3 class = "undertitles p-3 pb-0 text-center fw-lighter mb-5">the ones hiding behind your best finds</h3>
     </div>
-    <div class="top-sellers mt-5">
+    <div class="top-sellers row">
       <% @top_sellers.each do |seller| %>
-        <div class="seller-card">
+        <div class="seller-card col-3">
           <div style="background-image: linear-gradient(rgba(246, 247, 235, 0.1), rgba(234, 235, 237, 0.1)),url(<%= cl_image_path seller.photo.key %>)" class="seller" ></div>
           <h3><%= seller.first_name %> <%= seller.last_name %></h3>
-          <p>From the depth of sweden we made his way to success</p>
+          <p><%= seller.profile %></p>
+          <p class="undertitles">Rented <%= Reservation.where(user_id: seller).count %> bottles</p>
         </div>
       <% end %>
     </div>
